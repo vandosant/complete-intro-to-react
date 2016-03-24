@@ -5,9 +5,9 @@ var MyTitle = require('./MyTitle')
 var MyFirstComponent = function () {
   return (
     <div>
-      <MyTitle title="Check this thing out" color="rebeccapurple" />
-      <MyTitle title="Check this guy out" color="peru" />
-      <MyTitle title="Check this gal out" color="papayawhip" />
+      <MyTitle title='Check this thing out' color='rebeccapurple' />
+      <MyTitle title='Check this guy out' color='peru' />
+      <MyTitle title='Check this gal out' color='papayawhip' />
     </div>
   )
 }
