@@ -5,7 +5,7 @@ var MyTitle = React.createClass({
   render () {
     return (
       div(null,
-        h1(null, 'Check this out')
+        h1(null, this.props.title)
       )
     )
   }
@@ -16,8 +16,8 @@ var ce = React.createElement
 
 var MyFirstComponent = (
   div(null,
-    MyTitleFact(null),
-    React.createElement(MyTitle, null),
-    ce(MyTitle, null)
+    MyTitleFact({title: "Checkout this thing out"}),
+    React.createElement(MyTitle, {title: "Checkout this guy out"}),
+    ce(MyTitle, {title: "Checkout this gal out"})
   )
 )
