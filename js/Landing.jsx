@@ -1,4 +1,5 @@
 var React = require('react')
+const { Link } = require('react-router')
 
 const Landing = () => {
   return (
@@ -6,7 +7,7 @@ const Landing = () => {
       <div className='home-info'>
         <h1 className='title'>Svdeo</h1>
         <input className='search' type='text' placeholder='search' />
-        <button className='browse-all'> or Browse All</button>
+        <Link to='/search' className='browse-all'> or Browse All</Link>
       </div>
     </div>
   )
