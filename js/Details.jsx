@@ -2,7 +2,7 @@ const React = require('react')
 const Header = require('./Header')
 
 class Details extends React.Component {
-  render() {
+  render () {
     const params = this.props.params || {}
     const {title, description, year, poster, trailer} = params
     return (
@@ -16,7 +16,7 @@ class Details extends React.Component {
         </div>
         <div className='video-container'>
           <iframe src={`https://www.youtube-nocookie.com/embed/${trailer}?rel=0&amp;controls=0&amp;showinfo=0`}
-                  frameBorder='0' allowFullScreen></iframe>
+            frameBorder='0' allowFullScreen></iframe>
         </div>
       </div>
     )
