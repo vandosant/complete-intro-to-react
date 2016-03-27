@@ -6,7 +6,7 @@ const Search = require('../js/Search')
 const ShowCard = require('../js/ShowCard')
 const {shallow, mount} = require('enzyme')
 const {shows} = require('../public/data')
-
+const { rootReducer } = require('../js/Store')
 describe('<Search />', () => {
   it('should render the brand', () => {
     const wrapper = shallow(<Search />)
@@ -27,3 +27,15 @@ describe('<Search />', () => {
     expect(wrapper.find('.show-card').length).to.equal(2)
   })
 })
+
+describe('Store', () => {
+  it('should bootstrap', () => {
+    const state = rootReducer(undefined, { type: '@@redux/INIT' })
+    expect(state).to.deep.equal({ searchTerm: '' })
+  })
+  it('should handle setSearchTerm actions', () => {
+    const state = rootReducer({searchTerm: 'some string'}, {type: 'setSearchTerm', value: 'new string'})
+    expect(state).to.deep.equal({searchTerm: 'new string'})
+  })
+})
+// store.dispatch() for testing result of actions
