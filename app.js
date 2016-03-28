@@ -23,7 +23,7 @@ const app = express()
 app.use('/public', express.static('./public')) // serve static files requested from public dir
 
 app.use((req, res) => {
-  match({ routes: Routes(), location: req.url }, (error, redirectLocation, renderProps) => {
+  match({ routes: Routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {
       res.status(500).send(error.message)
     } else if (redirectLocation) {
